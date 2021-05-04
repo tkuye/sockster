@@ -1,0 +1,3 @@
+/home/tosin/Desktop/sockster/build/CMakeFiles/rebuild_cache.dir
+/home/tosin/Desktop/sockster/build/CMakeFiles/edit_cache.dir
+/home/tosin/Desktop/sockster/build/CMakeFiles/sockster.dir
