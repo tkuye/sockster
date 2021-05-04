@@ -12,6 +12,8 @@
 *.map
 *.exp
 
+/build
+
 # Precompiled Headers
 *.gch
 *.pch

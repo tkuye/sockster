@@ -1,0 +1,1 @@
+/usr/bin/cc   -pthread -cjson   CMakeFiles/sockster.dir/src/sockster.c.o  -o sockster  -Wl,-rpath,/usr/local/lib /usr/local/lib/libevent.so 
