@@ -59,7 +59,13 @@ INSTALL_DIR ${libevent_INSTALL_DIR}
 INSTALL_COMMAND make install
 )
 
-target_link_libraries(sockster ${libevent_INSTALL_DIR}/lib/libevent.so)
+find_library(libevents 
+NAMES libevent.so libevent.a
+PATH ${libevent_INSTALL_DIR}/lib/
+)
+
+
+target_link_libraries(sockster ${libevents})
 
 add_dependencies(sockster libevent)
 
