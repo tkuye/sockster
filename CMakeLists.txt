@@ -17,6 +17,8 @@ add_executable(sockster
 ${SOURCE}
 )
 
+
+
 set(SOCK_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(LOCAL_INCLUDE_DIR /usr/local/include)
 set(INCLUDE_DIR /usr/include)
@@ -38,6 +40,7 @@ ${LOCAL_INCLUDE_DIR}
 ${INCLUDE_DIR}
 )
 
+
 list(APPEND CMAKE_PREFIX_PATH "/usr/local/include/")
 
 find_library(LIB_EVENT NAMES event2 event libevent2 libevent PATHS ${LOCAL_INCLUDE_DIR})
@@ -45,7 +48,7 @@ find_library(LIB_EVENT NAMES event2 event libevent2 libevent PATHS ${LOCAL_INCLU
 target_link_libraries(sockster ${LIB_EVENT})
 
 if(${LIB_EVENT}_NOT_FOUND)
-message(FATAL_ERROR "Could not find libevent2")
+message(WARNING "Could not find libevent2")
 endif()
 
 list(APPEND REQ_LIB ${LIB_EVENT})

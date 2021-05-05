@@ -3,6 +3,7 @@ FROM ubuntu
 
 RUN apt get update
 
+ENV execute sockster
 # Install lib event library 
 RUN git clone https://github.com/libevent/libevent.git
 
@@ -19,6 +20,7 @@ RUN cd ../../build
 RUN cmake ..
 RUN make 
 
+RUN ${execute}
 
 
 
