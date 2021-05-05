@@ -17,5 +17,8 @@ RUN make install
 RUN cd ../../build
 
 RUN cmake ..
+RUN make 
+
+
 
 

@@ -2,17 +2,33 @@ cmake_minimum_required(VERSION 3.10)
 
 project(sockster VERSION 1.0)
 
+set(SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
+
+
+
+list(APPEND SOURCE "src/cJSON.c" 
+"src/server.c"  
+"src/sockster.c"
+)
+
+
 
 add_executable(sockster 
-"src/sockster.c")
+${SOURCE}
+)
 
+set(SOCK_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(LOCAL_INCLUDE_DIR /usr/local/include)
 set(INCLUDE_DIR /usr/include)
 
-set(CMAKE_C_FLAGS " ${CMAKE_C_FLAGS} -pthread -cjson")
+set(GCC_COVERAGE_COMPILE_FLAGS "-lcjson -pthread ")
 
 
-set(SOCK_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
+SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")
+SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
+
+add_definitions(${GCC_COVERAGE_COMPILE_FLAGS})
+
 
 set(LIB_EVENT_2 event2)
 
@@ -21,7 +37,6 @@ ${SOCK_INCLUDE_DIR}
 ${LOCAL_INCLUDE_DIR}
 ${INCLUDE_DIR}
 )
-
 
 list(APPEND CMAKE_PREFIX_PATH "/usr/local/include/")
 
