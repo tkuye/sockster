@@ -6,6 +6,7 @@
 
 int main(int argc, char* argv[]){
 
-    printf("hello");
+    cJSON * mon = cJSON_CreateObject();
+    printf("hello\n");
     return 0; 
 }
