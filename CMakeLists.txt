@@ -19,7 +19,9 @@ ${SOURCE}
 set(libevent_INSTALL_DIR "${CMAKE_CURRENT_BINARY_DIR}/libevent")
 set(libevent_INCLUDE_DIR "${CMAKE_CURRENT_BINARY_DIR}/libevent/include")
 set(libevent_SRC_DIR "${CMAKE_CURRENT_BINARY_DIR}/libevent/src")
-set(libevent_CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${libevent_INSTALL_DIR})
+set(libevent_CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${libevent_INSTALL_DIR} 
+-DEVENT__DISABLE_MBEDTLS=ON
+)
 
 
 set(SOCK_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
