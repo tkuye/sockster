@@ -69,12 +69,3 @@ target_link_libraries(sockster ${libevents})
 
 add_dependencies(sockster libevent)
 
-# remove deps folder as we no longer need it
-add_custom_command(TARGET sockster
-    POST_BUILD
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMAND bash del.sh
-    COMMENT "Deleting deps folder..."
-)
-
-
